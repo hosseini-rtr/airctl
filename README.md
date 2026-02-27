@@ -60,14 +60,15 @@ Building hand tracking from scratch is a deep research problem (datasets, models
 ## Project structure (planned)
 
 - `airctl/`
-  - `capture/` - webcam capture
-  - `tracker/` - hand landmarks provider
-  - `gestures/` - gesture detection from landmarks
-  - `actions/` - OS backends (gnome / macos)
-  - `config/` - gesture → action mapping
-  - `cli.py` - `airctl` command entrypoint
+  - `src/` - Source codes
+    - `capture/` - webcam capture
+    - `tracker/` - hand landmarks provider
+    - `gestures/` - gesture detection from landmarks
+    - `actions/` - OS backends (gnome / macos)
+    - `config/` - gesture → action mapping
   - `configs/` - sample configs
   - `docs/` - development notes
+  - `cli.py` - `airctl` command entrypoint
   - `README.md` - You're here
 
 ---

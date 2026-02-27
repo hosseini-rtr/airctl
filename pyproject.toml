@@ -1,19 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "airctl"
 version = "0.1.0"
 description = "`airctl` is a gesture-driven “system control” tool (think `systemctl`, but for air/hand gestures)."
 readme = "README.md"
 requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "hosseini-rtr"}
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: X11",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Desktop Environment",
+    "Topic :: Multimedia :: Graphics",
+]
 
 dependencies = [
     "jeepney>=0.9.0",
     "mediapipe>=0.10.32",
     "opencv-python>=4.13.0.92",
+    "pynput>=1.8.1",
     "typer>=0.24.1",
 ]
+
+[project.urls]
+Homepage = "https://github.com/hosseini-rtr/airctl"
+Repository = "https://github.com/hosseini-rtr/airctl"
+Issues = "https://github.com/hosseini-rtr/airctl/issues"
 
 [project.scripts]
 airctl = "__main__:app"
 
 [tool.uv]
 package = true
+
+
