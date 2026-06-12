@@ -8,14 +8,12 @@ version = "0.1.0"
 description = "`airctl` is a gesture-driven “system control” tool (think `systemctl`, but for air/hand gestures)."
 readme = "README.md"
 requires-python = ">=3.12"
-license = {text = "MIT"}
-authors = [
-    {name = "hosseini-rtr"}
-]
+license = { text = "MIT" }
+authors = [{ name = "hosseini-rtr" }]
 
 classifiers = [
     "Development Status :: 3 - Alpha",
-    "Environment :: X11",
+    # "Environment :: X11",
     "Intended Audience :: End Users/Desktop",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
@@ -44,9 +42,10 @@ Repository = "https://github.com/hosseini-rtr/airctl"
 Issues = "https://github.com/hosseini-rtr/airctl/issues"
 
 [project.scripts]
-airctl = "__main__:app"
+airctl = "src.__main__:app"
 
 [tool.uv]
 package = true
 
-
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

@@ -73,6 +73,13 @@ Building hand tracking from scratch is a deep research problem (datasets, models
 
 ---
 
+## Start Project
+
+Using UV for dependencies
+
+- `uv sync`
+  Install dependencies via UV
+
 ## CLI (planned)
 
 The CLI is intentionally `systemctl`-like.

@@ -1,12 +1,15 @@
 import typer
 
+from .capture.main import capture_cam
+
 app = typer.Typer()
 
 
 @app.command()
 def run():
     """Run the service."""
-    print("DEMO: Running Airctl...")
+    print("Waiting for capturing ")
+    capture_cam()
 
 
 @app.command()
