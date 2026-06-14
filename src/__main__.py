@@ -1,31 +1,28 @@
 import typer
+from dotenv import load_dotenv
 
 from src.capture.main import capture_cam
+from src.tracker.hand_tracker import hand_tracker
+from src.tracker.model_manager import ModelManager
+from src.tracker.paths import ModelPath
+
+load_dotenv()
 
 app = typer.Typer()
 
 
 @app.command()
 def run():
-    """Run the service."""
-    # Check MediaPipe installation
     try:
-        import mediapipe as mp
 
-        print("MediaPipe is installed. Version:", mp.__version__)
-    except ImportError:
-        print("MediaPipe is not installed. Please install it to run the service.")
-        return
-    # Check MediaPipe Holistic model
-    try:
-        mp_holistic = mp.solutions.holistic
-        print("MediaPipe Holistic model is available.")
-    except AttributeError:
-        # Download Model if not available
-        print("MediaPipe Holistic model is not available. Downloading...")
-        mp_holistic = mp.solutions.holistic
-    print("Waiting for capturing ")
-    capture_cam()
+        """Run the service."""
+        print("Waiting for capturing ")
+        print(ModelPath.get_model_path(), ModelPath.get_model_url())
+        ModelManager.get_model()
+        hand_tracker()
+        # capture_cam()
+    finally:
+        print("finished!")
 
 
 @app.command()

@@ -33,6 +33,7 @@ dependencies = [
     "mediapipe>=0.10.32",
     "opencv-python>=4.13.0.92",
     "pynput>=1.8.1",
+    "python-dotenv>=1.2.2",
     "typer>=0.24.1",
 ]
 
